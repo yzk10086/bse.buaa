@@ -12,9 +12,13 @@
           <i class="el-icon-menu"></i>
           <span slot="title">数据集管理</span>
         </el-menu-item>
-        <el-menu-item index="/main/views">
+        <el-menu-item index="/main/statistics">
           <i class="el-icon-setting"></i>
-          <span slot="title">可视化展示</span>
+          <span slot="title">基本信息展示</span>
+        </el-menu-item>
+         <el-menu-item index="/main/views">
+          <i class="el-icon-view"></i>
+          <span slot="title">知识表示可视化</span>
         </el-menu-item>
       </el-menu>
     </el-col>

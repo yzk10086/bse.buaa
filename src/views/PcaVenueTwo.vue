@@ -1,10 +1,8 @@
 <template>
-  <div class="mlPCA">
     <div
-      id="main"
-      style="width: 800px; height: 800px; position: absolute; left: 450px"
+      id="PcaVenueTwo"
+      style="width: 600px; height: 600px; margin-left:300px"
     ></div>
-  </div>
 </template>
 
 
@@ -15,7 +13,7 @@ export default {
   name: "Echarts",
   methods: {
     mlPCA() {
-      var chartDom = document.getElementById("main");
+      var chartDom = document.getElementById("PcaVenueTwo");
       var myChart = echarts.init(chartDom);
       var option;
       $.get("http://127.0.0.1:8081//data_2/venue_pac2d_result_dump.json", function (data) {
@@ -26,6 +24,14 @@ export default {
         option = {
           xAxis: {},
           yAxis: {},
+          title: {
+            // 标题
+            text: "venue节点聚类（PCA）",
+            // 副标题
+            //subtext: "By 17373550_yzk",
+            // 副标题链接
+            left:"center"
+          },
           series: [
             {
               name: "1990",

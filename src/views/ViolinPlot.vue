@@ -1,6 +1,6 @@
 <template>
   <div id="test">
-    <div id="main" style="width: 100px;height:100px;"></div>
+    <div id="main" style="width: 1200px; height: 800px"></div>
   </div>
 </template>
 
@@ -12,9 +12,9 @@ export default {
   methods: {
     Violin() {
       //d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/violin_data.csv", function(err, rows){
-      d3.csv("http://127.0.0.1:8081/data/iris.csv", function(err, rows) {
+      d3.csv("http://127.0.0.1:8081/data/iris.csv", function (err, rows) {
         function unpack(rows, key) {
-          return rows.map(function(row) {
+          return rows.map(function (row) {
             return row[key];
           });
         }
@@ -23,32 +23,35 @@ export default {
         var data = [
           {
             type: "violin",
-            //x: unpack(rows, 'name'),
+            x: unpack(rows, "Name"),
             y: unpack(rows, "SepalLength"),
 
-            //hoveron: "points+kde",
+            hoveron: "points+kde",
 
             points: "all",
             pointpos: 0,
             box: {
               visible: true,
             },
-            //boxpoints: true,
+            boxpoints: true,
             line: {
               color: "black",
             },
             //fillcolor: '#4386E3',
-            //opacity: 0.6,
+            opacity: 0.6,
             meanline: {
               visible: true,
             },
-            //x0: "Wpw",
+            x0: "Wpw",
             transforms: [
               {
                 type: "groupby",
-                groups: unpack(rows, "name"),
+                groups: unpack(rows, "Name"),
                 styles: [
-                  { target: "Iris-setosa", value: { line: { color: "blue" } } },
+                  {
+                    target: "Iris-setosa",
+                    value: { line: { color: "blue" } },
+                  },
                   {
                     target: "Iris-versicolor",
                     value: { line: { color: "orange" } },

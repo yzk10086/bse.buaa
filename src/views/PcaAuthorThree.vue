@@ -1,7 +1,5 @@
 <template>
-  <div class="PCA_3d_author">
-    <div id="main" style="width: 800px; height: 800px;position:absolute;left:450px;"></div>
-  </div>
+    <div id="PcaAuthorThree" style="width: 500px; height: 500px;margin-left:300px"></div>
 </template>
 
 
@@ -13,7 +11,7 @@ export default {
   methods: {
     PCA3D() {
       var echarts = require("echarts");
-      var chartDom = document.getElementById("main");
+      var chartDom = document.getElementById("PcaAuthorThree");
       var myChart = echarts.init(chartDom);
       var option;
       var symbolSize = 8;
@@ -47,12 +45,14 @@ export default {
               saveAsImage: {},
             },
           },
-          // legend: {
-          //   data: ["Iris-setosa", "Iris-versicolor", "Iris-virginica"],
-          //   top: 0,
-          //   left: "center",
-          //   bottom: 10,
-          // },
+          title: {
+            // 标题
+            text: "PCA可视化生成的作者节点聚类云",
+            // 副标题
+            //subtext: "By 17373550_yzk",
+            // 副标题链接
+            left:"center"
+          },
           
           series: [
             {

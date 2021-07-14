@@ -19,7 +19,7 @@
 export default {
   data() {
     return {
-      upUrl: "http://127.0.0.1:8081/data/",
+      upUrl: "http://127.0.0.1:9090/fileupload",
     };
   },
   methods: {

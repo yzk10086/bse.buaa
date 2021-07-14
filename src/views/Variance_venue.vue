@@ -1,10 +1,8 @@
 <template>
-  <div class="mlPCA">
     <div
-      id="main"
-      style="width: 800px; height: 800px; position: absolute; left: 450px"
+      id="VarianceVenue"
+      style="width: 600px; height: 600px;margin-left:220px"
     ></div>
-  </div>
 </template>
 
 
@@ -17,12 +15,12 @@ export default {
   name: "Echarts",
   methods: {
     mlPCA() {
-      var chartDom = document.getElementById("main");
+      var chartDom = document.getElementById("VarianceVenue");
       var myChart = echarts.init(chartDom);
       echarts.registerTransform(ecStat.transform.regression);
       var option;
       $.get("http://127.0.0.1:8081//data_2/venue_variance.json", function (data) {
-        console.log(data)
+        //console.log(data)
         const new_data = data.map((val, index) => new Array(index, val*val));
         option = {
           dataset: [
@@ -40,14 +38,14 @@ export default {
               },
             },
           ],
-          // title: {
-          //   // 标题
-          //   text: "标准差下降肘型图",
-          //   // 副标题
-          //   subtext: "By 17373550_yzk",
-          //   // 副标题链接
-          //   left:"center"
-          // },
+          title: {
+            // 标题
+            text: "venue嵌入主元标准差",
+            // 副标题
+            //subtext: "By 17373550_yzk",
+            // 副标题链接
+            left:"center"
+          },
           tooltip: {
             trigger: "axis",
             axisPointer: {

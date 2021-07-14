@@ -1,6 +1,6 @@
 <template>
-  <div id="test">
-    <div id="main" style="width: 600px;height:600px;"></div>
+  <div id="SepalLength">
+    <div id="test" style="width: 1100px;height:600px;"></div>
   </div>
 </template>
 

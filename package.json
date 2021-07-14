@@ -14,6 +14,7 @@
     "echarts-gl": "^2.0.4",
     "echarts-stat": "^1.2.0",
     "element-ui": "^2.15.1",
+    "formidable": "^1.2.2",
     "http-server": "^0.12.3",
     "jquery": "^3.6.0",
     "ml-pca": "^4.0.2",
